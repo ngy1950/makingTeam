@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DATABASE 테스트</title>
+</head>
+<body>
+  <ul>
+    <li th:each="item : ${LIST}">
+      <dl>
+        <dd><span th:text="${item.no2}"></span></dd>
+      </dl>>
+    </li>
+  </ul>
+</body>
+</html>

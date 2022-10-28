@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function ajaxTest(){
+        $.ajax({
+            type: "GET",
+            url: "/sample",
+            success:(data) => {
+                console.log(data);
+                $('#ajaxTest1').text(data);
+            }
+        });
+    }
+    function ajaxTest2(){
+        $.ajax({
+            type: "GET",
+            url: "/sampleValue",
+            success:(data) => {
+                console.log(data);
+                $('#ajaxTest2').text(data);
+            }
+        });
+    }
+</script>
+</head>
+
+<body>
+    ※ TEST 페이지 ※
+    <br>
+    <button onclick="ajaxTest()">ajax_Test</button><br>
+    <span id="ajaxTest1"></span><br>
+    <button onclick="ajaxTest2()">ajax_Test2</button><br>
+    <span id="ajaxTest2"></span>
+</body>
+</html>

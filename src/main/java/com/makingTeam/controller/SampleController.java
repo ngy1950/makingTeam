@@ -92,6 +92,12 @@ public class SampleController {
             return mav;
         }
 
+        @RequestMapping(value = "/apiView", method = RequestMethod.GET)
+        public ModelAndView getApiView(HttpServletRequest request){
+            System.out.println("@@@@@ apiView start @@@@@");
+            return new ModelAndView("thymeleaf/common/apiView");
+        }
+
         @RequestMapping(value = "/sampleHashMap")
         @ResponseBody
         public String sampleHasMap(@RequestParam HashMap<String,Object> param){

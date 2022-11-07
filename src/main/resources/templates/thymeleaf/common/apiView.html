@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="/thymeleaf/common/commonHead"></th:block>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="apiView()">
+    <div id="viewBody"></div>
+</body>
+
+<script>
+    function apiView(){
+        // TODO ORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. 에러발생 확인필요
+        console.log('start apiView!!');
+        //var bodyData = opener.parent.getViewData();
+        var data = DataManager.getData('api_view_data');
+        console.log('apiView\n'+ data);
+        debugger;
+    }
+</script>
+</html>

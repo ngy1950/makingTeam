@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>타임리프 테스트</title>
+    <script>
+        $(document).ready(){
+            var text = "${text}";
+            console.log(text);
+        }
+    </script>
+</head>
+<body>
+    <h1>thymeleaf sample Test</h1>
+    <h2>값 호출 = <span th:text="${text}"></span></h2>
+</body>
+</html>

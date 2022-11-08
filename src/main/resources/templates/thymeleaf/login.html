@@ -121,6 +121,7 @@
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
       </form>
       <button class="kakaoLogin" id="kakaoLogin"><img src="/common/image/kakao_login/ko/kakao_login_medium_wide.png" class="w-100"></button>
+      <input type="hidden" id="kakaoUrl" th:value="${loginKakao}">
       <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
     </main>
 </body>
@@ -131,18 +132,20 @@
     console.log('document ready!!!');
 
     $('#kakaoLogin').click(function(){
+        console.log($('#kakaoUrl').val());
+        location.replace($('#kakaoUrl').val());
         // req_url, send_data, type, content_type, res_type, res_callback
-        NetUtils.getRestAPIView('/login/sign/kakao', ENV_AJAX.methodType.POST, function(rs){
-            DataManager.setData('api_view_data', {'view_data': rs});
-            window.open('/apiView','_black','width=650, height=850');
-            debugger;
-        });
+<!--        NetUtils.getRestAPIView('/login/sign/kakao', ENV_AJAX.methodType.POST, function(rs){-->
+<!--            DataManager.setData('api_view_data', {'view_data': rs});-->
+<!--            window.open('/apiView','_black','width=650, height=850');-->
+<!--            debugger;-->
+<!--        });-->
     });
 
     function getViewData(rsData){
         return rsData;
     }
-  })
+  });
 
 </script>
 </html>
